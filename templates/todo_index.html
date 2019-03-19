@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+
+  </head>
+<body style="
+    text-align: -webkit-center;
+">
+  <div>
+    <h1>Todo List</h1>
+    <form action="/todo/add" method="post" style="
+    font: larger;
+">
+      <input type="text" name="title" placeholder="请输入">
+      <button type="submit" class="btn btn-info">add</button>
+    </form>
+    <div class="" style="
+    /* display: none; */
+    font-size: 28px;
+    color: blueviolet;
+    font-family: cursive;
+">
+
+      {%for u in todos %}
+      <span>{{u.id}}:{{u.title}}</span>
+      <a href="/delete?id={{u.id}}">delete</a>
+      <br>
+      {%endfor%}
+
+    </div>
+  </div>
+<script src="https://cdn.bootcss.com/angular.js/2.0.0-beta.17/router.min.js"></script>
+</body>
+</html>
+
+
+
+
